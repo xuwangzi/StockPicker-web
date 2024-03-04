@@ -8,17 +8,24 @@ module.exports = {
   devServer: {
     disableHostCheck: true,
     host: '0.0.0.0',
-    proxy: { //配置代理，解决跨域请求后台数据的问题
-      '/api': { // 定义了一个路径前缀为 '/api' 的代理规则。
-        target: 'http://localhost:8080', //后台接口
-        ws: true, //是否跨域
+    port: 8089, // 指定端口
+    proxy: {
+      //'/api/api2'和'/api'位置切忌不可调换，否则会出bug（应该是按次序匹配的缘故）
+      // 代理 localhost:5000 = http://localhost:8089/api/api2
+      '/api/api2': {
+        target: 'http://localhost:5000',
         changeOrigin: true,
-        pathRewrite: {
-          '^/api': '/'
-        }
-      }
+        pathRewrite: { '^/api/api2': '' }, // 将 /api/api2 替换为空字符串
+      },
+      // 代理 localhost:8000 = http://localhost:8089/api
+      '/api': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+        pathRewrite: { '^/api': '' }, // 将 /api 替换为空字符串
+      },
 
-    }
+    },
+
   },
 
   pluginOptions: {

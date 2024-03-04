@@ -277,8 +277,6 @@ export default {
     stockNum: {
       get() {
         return String(this.$route.params.stockNum);
-      },
-      set(v) {
       }
     }
     // stockNum() {
@@ -513,7 +511,7 @@ export default {
     }
 
     .green {
-        color: #4f9f3f;;
+        color: #4f9f3f;
     }
   }
   .main-chart {

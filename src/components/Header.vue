@@ -5,8 +5,12 @@
       <!-- <el-menu-item index="Home" :route="{ name: 'Home' }">首页</el-menu-item> -->
       <el-menu-item index="Stock" :route="{ name: 'Stock' }">股市行情</el-menu-item>
       <el-menu-item index="StockPicker" :route="{ name: 'StockPicker' }">优股智选</el-menu-item>
-<!--      todo 撰写文档 -->
-      <div class="el-menu-item"><a href="https://github.com/xuwangzi" target="_blank">帮助文档</a></div>
+      <el-menu-item index="StockHelp" :route="{ name: 'StockHelp' }">帮助文档</el-menu-item>
+<!--      <div class="el-menu-item">-->
+<!--        <a href="https://xuwangzi.github.io/2024/01/25/StockPicker%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C/" target="_blank">-->
+<!--          帮助文档-->
+<!--        </a>-->
+<!--      </div>-->
       <!-- 为了和其他菜单样式保持一致，请一定要添加类名 el-menu-item -->
 
       <el-select

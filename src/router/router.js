@@ -38,12 +38,6 @@ export default new Router({
       }
     },
     {
-      path: '/stock/StockPicker',
-      name: 'StockPicker',
-      component: () => import(/* webpackChunkName: "stock_picker" */ '@/views/Stock/StockPicker.vue'),
-      meta: { title: '优股智选 - StockPicker' }
-    },
-    {
       path: '/stock/detail/:stockNum', // 定义了该路由的路径
       name: 'StockDetail', // 为该路由设置了一个名字，在代码中引用这个路由。
       component: () => import(/* webpackChunkName: "stock_detail" */ '@/views/Stock/StockDetail.vue'),
@@ -52,6 +46,18 @@ export default new Router({
       // () => import(...) 是一个返回Promise的函数，该Promise解析为导入的模块。这意味着StockDetail.vue 组件只有在需要时才会被加载，有助于优化性能。
       // /* webpackChunkName: "stock_detail" */ 是Webpack的注释，指定了动态导入的代码块（chunk）的名称为 "stock_detail"。
       meta: { title: '股票详情 - StockPicker' }
+    },
+    {
+      path: '/stock/StockPicker',
+      name: 'StockPicker',
+      component: () => import(/* webpackChunkName: "stock_picker" */ '@/views/Stock/StockPicker.vue'),
+      meta: { title: '优股智选 - StockPicker' }
+    },
+    {
+      path: '/stock/StockHelp',
+      name: 'StockHelp',
+      component: () => import(/* webpackChunkName: "stock_help" */ '@/views/Stock/StockHelp.vue'),
+      meta: { title: '帮助文档 - StockHelp' }
     },
     {
       path: '*',

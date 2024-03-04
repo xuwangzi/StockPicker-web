@@ -1,7 +1,8 @@
-import { get,post } from './http'
+import { get,post } from './http.js'
 
 /* 获取股票列表 */
 export const getStockList = p => get('/stock/getstocklist', p);
+
 export const updateStockList = p => get('/stock/updatestocklist', p);
 export const updateStockDayInfo = p => get('/stock/updatestockdayinfo', p);
 export const updateStockTimeInfo = p => get('/stock/updatestocktimeinfo', p);
@@ -24,7 +25,10 @@ export const selectReplayList = p => get('/stock/selectreplaylist', p)
 
 export const getStockBid = p => get('/stock/getstockbid', p)
 
+// StockPicker
+export const getStockPicker = p => get('/stock/getstockpicker', p)
 
-
+// //python接口，之后所有用到python的接口时都必须加上前缀api2
+// export const getStockPicker = p => get('/api2/stock/picker', p);
 
 

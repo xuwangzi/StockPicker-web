@@ -14,18 +14,15 @@
           <span class="left">
             <i :class="item.range >= 0 ? 'el-icon-top' : 'el-icon-bottom'"></i>
             {{ item.range }}
-            <!-- todo 后端没有 range: Number((item[2] - item[6]).toFixed(2)),-->
           </span>
           <span class="right">
             <i :class="item.rate >= 0 ? 'el-icon-top' : 'el-icon-bottom'"></i>
             {{ item.rate }}
-            <!-- todo 后端没有 rate: item[3]-->
           </span>
         </div>
       </li>
     </ul>
 
-    <!-- todo 操作界面 美化&合并&自动更新  -->
     <el-popover
         title="更新股票数据"
         placement="right"
@@ -138,7 +135,6 @@
           }}</span>
         </template>
       </el-table-column>
-      <!--  todo 这个"涨跌额"是什么？    -->
       <el-table-column label="涨跌额" width="90" align="center">
         <template slot-scope="scope">
           <span class="stock-upDownPrices" :class="scope.row.upDownPrices.includes('-') ? 'green' : 'red'">{{
